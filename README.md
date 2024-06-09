@@ -1,66 +1,21 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Laravel 10: Sending Emails with Envelopes
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Setting up a Test Mailbox
+There are lots of options out there for testing the sending and receiving of emails. The one I commonly use is Mailtrap.io but there are many other options available. To name a couple you have Amazon SES and Mailgun. As I use mailtrap, I will be using it for the remainder of the guide.
 
-## About Laravel
+Before we are able to start sending emails, we need to configure our test email environment to work with Laravel. This will be done in our .env file. Thankfully, Mailtrap provides you with all the necessary credentials out of the box. We just need to select “Laravel 9+” from the drop down. Note: To get your unfiltered password you would click on “Show Credentials”
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![image](https://github.com/ThanhTuanTruong/Laravel-Mail/assets/30792959/2161f2ed-b1b6-4360-9146-51e55f86d95d)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+After we have our credentials, we need to update our .env in our project so we can tell Laravel where to send the emails. This is rather quick as you will mostly need to copy and paste above credentials. Once you have, it should look something like the snippet below, without a masked password.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![image](https://github.com/ThanhTuanTruong/Laravel-Mail/assets/30792959/3242d49b-8650-4dd5-8a67-fbb1a10269e7)
 
-## Learning Laravel
+## Sending your first Envelope
+With everything setup, you should now be able to complete the form we made at the start of this guide, therefore, lets go to our form and fill it in.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![image](https://github.com/ThanhTuanTruong/Laravel-Mail/assets/30792959/4641c425-d48e-49bf-8aa5-a2158da1a3bd)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Now, all we need to do is click on the ‘Send Message’ button and let all the code we have written do it’s magic. If the email is sent successfully, you should be able to check your mailtrap account and see the email.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![image](https://github.com/ThanhTuanTruong/Laravel-Mail/assets/30792959/e09900b3-e4d6-4c3f-b56f-d8097d81afdf)
